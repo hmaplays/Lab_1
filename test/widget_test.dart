@@ -6,7 +6,7 @@ void main() {
     await tester.pumpWidget(const QuickShop());
     expect(find.text('QuickShop'), findsOneWidget);
     expect(find.text('Welcome! Find your favourite products.'), findsOneWidget);
-    await tester.pump(const Duration(seconds: 3));
+    await tester.pump(const Duration(seconds: 6));
   });
 
   test('Product keeps name, price and description', () {
