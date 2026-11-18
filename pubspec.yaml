@@ -9,7 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  webview_flutter: ^4.13.1
+  webview_flutter: 4.10.0
 
 dev_dependencies:
   flutter_test:
@@ -18,3 +18,6 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+dependency_overrides:
+  webview_flutter_android: 4.10.15
