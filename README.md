@@ -1,28 +1,38 @@
-# QuickShop - Mobile Computing Assignment 1
+# QuickShop — Mobile Computing Assignment 1
 
-Student: Hafiz Muhammad Ammar Ali
-Roll number: 2502123
-Section: BS IT 3B
+**Student:** Hafiz Muhammad Ammar Ali  
+**Roll number:** 2502123  
+**Section:** BS IT 3B
 
-QuickShop is a small Flutter and Dart shopping application. Products are kept
-in a Dart List while the app is running. No database or API is used.
+QuickShop is a shopping app built in Flutter and Dart. It uses an in-memory list of products, without a backend, database, or external product API.
 
-## Run
-1. Open this folder in Android Studio or VS Code.
-2. Start an Android emulator (or connect a phone).
-3. Run `flutter pub get`, then `flutter run`.
-4. Run `flutter test` for the included widget tests.
+## Run on Android
 
-## Required features
-- Timed splash screen and Home screen
-- Drawer: Home, Products, Add Product, Gestures & Animation, WebView
-- Product cards and details page with an Add to Cart response
-- Add Product form with required-field and positive-price validation
-- Tap, double-tap, long-press, horizontal drag and vertical drag
-- Interactive AnimatedContainer and increment/decrement counter (setState)
-- Embedded https://flutter.dev via webview_flutter
+1. Open the project in Android Studio or VS Code.
+2. Start an Android emulator (the tested emulator was `emulator-5554`).
+3. Run `flutter pub get` followed by `flutter run -d emulator-5554`.
+4. Run `flutter test` for the included tests.
 
-## Notes
-The screenshot files are kept in the assignment folder outside this project.
-The WebView needs an internet connection. Added products are not saved after
-closing the app, as requested in the lab instructions.
+The debug APK built successfully with Flutter 3.47.4 and was installed on the Android emulator. Both Flutter tests passed.
+
+## Features
+
+- Shopping-bag splash screen with automatic Home navigation
+- Home product cards and navigation drawer
+- Product detail screen and Add to Cart SnackBar
+- Validated Add Product form and in-memory list updates
+- Single tap, double tap, long press, horizontal swipe, and vertical drag
+- AnimatedContainer, counter increment/decrement using `setState()`
+- Embedded WebView with Android INTERNET permission
+
+## Assignment deliverables
+
+- [Final assignment ZIP — source, Word report, PDF, and 16 emulator screenshots](submission/QuickShop_Assignment_1_FINAL_2502123.zip)
+- [Final PDF report](submission/QuickShop_Assignment_1_Hafiz_Muhammad_Ammar_Ali_FINAL.pdf)
+- [Flutter source ZIP](submission/QuickShop_Project.zip)
+
+## Development notes
+
+The working build pins `webview_flutter` to 4.10.0 and `webview_flutter_android` to 4.10.15 after a newer plugin produced Kotlin compilation errors with the installed Android build toolchain.
+
+The WebView screen opens and starts loading `https://example.com`, but the external page did not finish rendering in the emulator test. This limitation is recorded in the report. Added products remain available only during the running app session.
