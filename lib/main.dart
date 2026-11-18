@@ -49,7 +49,7 @@ class _IntroScreenState extends State<IntroScreen> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(seconds: 2), () {
+    Future.delayed(const Duration(seconds: 5), () {
       if (!mounted) return;
       Navigator.pushReplacement(context,
           MaterialPageRoute(builder: (_) => const ShopHome()));
@@ -473,7 +473,7 @@ class _WebPageState extends State<WebPage> {
           }
         },
       ))
-      ..loadRequest(Uri.parse('https://flutter.dev'));
+      ..loadRequest(Uri.parse('https://example.com'));
   }
 
   @override
@@ -481,7 +481,7 @@ class _WebPageState extends State<WebPage> {
     return Column(children: [
       if (progress < 100) LinearProgressIndicator(value: progress / 100),
       const Padding(padding: EdgeInsets.all(10),
-        child: Text('Website: https://flutter.dev')),
+        child: Text('Website: https://example.com')),
       Expanded(child: WebViewWidget(controller: controller)),
     ]);
   }
